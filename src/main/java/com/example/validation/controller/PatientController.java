@@ -24,6 +24,7 @@ public class PatientController {
 
     @GetMapping("/id")
     public ResponseEntity<PatientResponse> getPatientById(@RequestParam("id") Long id){
+        System.out.println("Request by id: "+ id);
         PatientResponse response = patientsService.getPatientById(id);
         return ResponseEntity.ok(response);
     }
