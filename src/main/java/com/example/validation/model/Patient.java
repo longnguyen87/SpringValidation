@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -30,4 +33,24 @@ public class Patient {
     private Integer age;
 
     private String email;
+    @Column(name="blood_type")
+    private String bloodType;
+
+    @Column(name="consent_given")
+    private Boolean consentGiven;
+
+    @Column(name="preexisting_conditions")
+    @ElementCollection
+    private List<String> preexistingConditions;
+
+    @Column(name="policy_number")
+    private Integer policyNumber;
+
+    @Column(name ="registration_date")
+    private LocalDate registrationDate;
+
+    @Column(name="date_of_birth")
+    private LocalDate dateofBirth;
+
+
 }

@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 public class PatientRequest {
+
     private String firstName;
     private String middleName;
     private String lastName;

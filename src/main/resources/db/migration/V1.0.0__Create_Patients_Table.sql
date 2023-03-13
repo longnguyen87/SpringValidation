@@ -4,5 +4,11 @@ CREATE TABLE patient (
    middle_name VARCHAR(20),
    last_name VARCHAR(20),
    age INT,
-   email VARCHAR(50)
+   email VARCHAR(50),
+   consent_given BOOLEAN,
+   blood_type VARCHAR(50),
+   preexisting_conditions VARCHAR(5000),
+   policy_number INT,
+   registration_date DATE,
+   date_of_birth DATE
 );

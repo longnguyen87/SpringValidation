@@ -16,7 +16,7 @@ public class SpringValidationApplication implements CommandLineRunner {
 	}
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 		// Create a couple patient to save to database
 
 		Patient patient1 = Patient.builder()
