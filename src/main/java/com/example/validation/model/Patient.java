@@ -1,6 +1,7 @@
 package com.example.validation.model;
 
 
+import com.example.validation.dto.PatientRequest;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -54,4 +55,18 @@ public class Patient {
     private LocalDate dateofBirth;
 
 
+    public Patient updatePatient(PatientRequest updatedPatient) {
+        setFirstName(updatedPatient.getFirstName());
+        setMiddleName(updatedPatient.getMiddleName());
+        setLastName(updatedPatient.getLastName());
+        setAge(updatedPatient.getAge());
+        setEmail(updatedPatient.getEmail());
+        setBloodType(updatedPatient.getBloodType());
+        setConsentGiven(updatedPatient.getConsentGiven());
+        setPreexistingConditions(updatedPatient.getPreexistingConditions());
+        setPolicyNumber(updatedPatient.getPolicyNumber());
+        setRegistrationDate(updatedPatient.getRegistrationDate());
+        setDateofBirth(updatedPatient.getDateofBirth());
+        return this;
+    }
 }

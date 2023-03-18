@@ -35,4 +35,12 @@ public class PatientsService {
         Patient patient = patientRepository.save(patientRequest.toEntity());
         return fromEntity(patient);
     }
+
+    public PatientResponse updatePatient(Long id, PatientRequest updatedPatient) {
+        return patientRepository.findById(id)
+                .map(patient -> patient.updatePatient(updatedPatient))
+                .map(patient -> patientRepository.save(patient))
+                .map(patient -> fromEntity(patient))
+                .orElseThrow(()-> new IllegalArgumentException("Patient with id:" + id +" not found"));
+    }
 }
